@@ -1,0 +1,24 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/GSDevTools.min.js"></script>
+  </head>
+  <body>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="400px" height="400px">
+      <polygon style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" points="74.251 70.659 252.096 68.263 392.216 68.862 251.497 221.557"></polygon>
+    </svg>
+
+    <script>
+      const tl = gsap.timeline().to("polygon",{attr:{
+        points:"74.251 70.659 252.096 30 392.216 68.862 251.497 221.557"
+      }})
+
+      GSDevTools.create({ animation: tl });
+    </script>
+  </body>
+</html>
