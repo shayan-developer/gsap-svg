@@ -1,0 +1,60 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/GSDevTools.min.js"></script>
+  </head>
+  <body>
+    <svg
+      class="demo"
+      viewBox="0 0 400 400"
+      width="400px"
+      height="400px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <polyline
+        class="line"
+        style="fill: none; stroke-width: 4px; stroke: rgb(223, 36, 195)"
+        points="200 100 200 200 200 100"
+      ></polyline>
+    </svg>
+  </body>
+
+  <script>
+    const tl = gsap
+      .timeline({
+        repeat: -1,
+        repeatDelay: 1,
+        defaults: {
+          ease: "bounce.out",
+          duration: 1,
+        },
+      })
+
+      .to("polyline", {
+        attr: {
+          points: "100 200 200 200 300 200",
+        },
+      })
+
+      .to("polyline", {
+        attr: {
+          points: "100 200 200 400 300 200",
+        },
+      })
+
+      .to("polyline", {
+        attr: {
+          points: "200 200 200 100 200 200",
+        },
+        ease: "none",
+        duration: 0.5,
+      });
+
+    // GSDevTools.create({ animation: tl });
+  </script>
+</html>
